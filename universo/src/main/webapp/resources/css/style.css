@@ -1,5 +1,9 @@
 @CHARSET "ISO-8859-1";
 
+body{
+	background-image:  url("b.gif");
+}
+
 .formularioCorpo{
 	background-color: #FFF;
 	border-bottom: 1px solid #e5e5e5;
@@ -24,4 +28,14 @@
 	text-align: center;
 	color: darkblue;
 	font-style: italic;		
+}
+.footer{
+	color: white;
+	text-align: center;	
+}
+.header{
+	
+}
+.menu{
+	
 }
