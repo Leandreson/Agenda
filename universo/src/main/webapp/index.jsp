@@ -1,8 +1,1 @@
-<html> 
-<head>
-<title>JSP forward action tag example</title>
-</head>
-<body> 
-oioioioi
-</body> 
-</html>
+<jsp:forward page="/resources/pages/home.xhtml"></jsp:forward>

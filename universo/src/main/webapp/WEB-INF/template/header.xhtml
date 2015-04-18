@@ -1,87 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui"
-	xmlns:tjfw="http://tjfw.tjba.jus.br/tjfw/jsf/components/ui">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:p="http://primefaces.org/ui"
+>
 
 	<h:body>
 
-		<script type="text/javascript">
-			
-		  	// desabilitar ENTER para submissão do formulário
-	        $ = jQuery
-	        $(function(){
-	            $('input').keydown(function(e){
-	                if (e.keyCode == 13) {
-	                    $('#signUpFrm').submit();
-	                    return false;
-	                }
-	            });
-	        });
-	
-	        // muda a cor do diálogo de acordo com o tipo da mensagem exibida
-	        function changeDialogColor(dialogId) {
-				var div_1 = $('#messages').find('div[class*="ui-messages"]');
-				var estilo = div_1.css('background-color');
-				
-				//var corpo_dialogo = $('.ui-dialog-content').eq(1);
-				var corpo_dialogo = $('#' + dialogId).find('div:first');
-				
-				corpo_dialogo.css('background-color', estilo);
-			}
-				
-		</script>
-
-		<tjfw:ajaxStatusBlocker />
-
-		<p:ajaxStatus oncomplete="reApply(); loadCssIe(); fixIE7Fields(); initialized();" />
-
-		<div class="marca">
-			<h:graphicImage value="#{resource['tjba-default-theme:images/marca_tjba.png']}" alt="#{msgs['titulo.tribunalDeJustica']}" width="150" height="150" />
-		</div>
-		
-		<div class="identificacao">
-			<div class="nome_sistema">
-				<h:form>
-					<h:commandLink action="pretty:home" style="text-decoration: none;">
-						<h:outputText value="#{msgs['titulo.sistema']}" styleClass="ui-tj-link-home" />
-					</h:commandLink>
-				</h:form>
-			</div>
-		</div>
-		
-		<div class="usuario">
-			<div class="icone">
-				<h:graphicImage value="#{resource['tjba-default-theme:images/icons/icone_usuario.png']}" width="25" height="22" />
-			</div>
-			<div class="nome_usuario">
-				<span><h:outputText value="#{msgs['title.seguranca.usuario.nome']}" /></span>
-				<span class="nome_usuario_normal"><h:outputText value="#{homeBean.usuario.nome}" /></span>
-				<span><h:outputText value="#{msgs['title.seguranca.separador']}" /></span>
-				<h:outputText value="#{msgs['title.seguranca.usuario.matricula']}" />
-				<span class="nome_usuario_normal"><h:outputText value="#{homeBean.usuario.matricula}" /></span>
-				<span><h:outputText value="#{msgs['title.seguranca.separador']}" /></span>
-			</div>
-
-			<h:form>
-				<ui:fragment rendered="#{tjfw:isNotAuthenticated()}">
-					<h:commandLink action="pretty:home" styleClass="botao_home">
-						<h:graphicImage value="#{resource['tjba-default-theme:images/home.png']}" width="16" height="16" />
-						<h:outputText value="#{msgs['button.label.home']}" styleClass="ui-tj-link-excluir-texto" />
-					</h:commandLink>
-				</ui:fragment>
-	
-				<ui:fragment rendered="#{tjfw:isAuthenticated()}">
-					<h:commandLink action="#{homeBean.logout}" styleClass="botao_home">
-						<h:graphicImage value="#{resource['tjba-default-theme:images/icons/botao_sair.jpg']}" width="15" height="16" />
-						<h:outputText value="#{msgs['button.seguranca.label.sair']}" styleClass="ui-tj-link-excluir-texto" />
-					</h:commandLink>
-				</ui:fragment>
-			</h:form>
-		</div>
-
-		<div id="menu">
+		<center>
+		MEU CABECALHO
+		</center>
+		<!-- <div id="menu">
 			<ui:include src="/resources/pages/common/menu.xhtml" />
-		</div>
+		</div> -->
 	</h:body>
 
 </ui:composition>
