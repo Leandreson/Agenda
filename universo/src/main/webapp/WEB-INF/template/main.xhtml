@@ -1,75 +1,31 @@
-<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui" lang="pt-br" xml:lang="pt-br">
-
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>
-		<h:outputText value="#{msgs['titulo.sistema']}" />
-	</title>
-
-	<h:outputScript library="tjba-default-theme" name="js/main.js" />
-	<h:outputScript library="tjba-default-theme" name="js/jquery.mask.min.js" />
-	<h:outputScript library="tjba-default-theme" name="js/autoNumeric-1.7.5.js" />
-	<h:outputScript library="tjba-default-theme" name="js/portuguese_locale_translation.js" />
-	<h:outputScript library="tjba-default-theme" name="js/selectivizr-tj.js" />
-	<h:outputScript library="js" name="precatorios.js" />
-	<h:outputScript library="js" name="jquery.maskMoney.min.js" />
-
-	<h:outputStylesheet library="tjba-default-theme" name="css/menu.css" />
-	<h:outputStylesheet library="tjba-default-theme" name="css/estilo.css" />
-	<h:outputStylesheet library="tjba-default-theme" name="css/main.css" />
-	<h:outputStylesheet library="css" name="estilo.css" />
-
-	<link rel="shortcut icon" href="#{resource['tjba-default-theme:images/icons/favicon.ico']}" type="image/x-icon" />
-
-	<link rel="shortcut icon" href="#{resource['tjba-default-theme:images/icons/favicon.ico']}" type="image/x-icon" />
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+      
+    <h:head>
+    	<h:outputStylesheet library="css" name="style.css" />
+    	<h:outputStylesheet library="css" name="bootstrap-theme.css" />
+    	<h:outputStylesheet library="css" name="bootstrap.css" />
+    </h:head>
+    	
+	<h:body style="background-color: #F8F8FF;">
+	<ui:include src="/WEB-INF/template/header.xhtml" />	
 	
-</h:head>
-
-<h:body onload="moveRelogio()">
-
-	<script type="text/javascript">
-		function loadCssIe(){
-			if (isIE7()) {
-				var fileref = document.createElement("link");
-				fileref.setAttribute("rel", "stylesheet");
-				fileref.setAttribute("type", "text/css");
-				fileref.setAttribute("href", '#{resource["css:estilo-ie.css"]}');
-				document.getElementsByTagName("head")[0].appendChild(fileref);
-			}
-		}
-	</script>
+		<fieldset>
+			<div class="formularioCorpo">
+				<div class="form-group">
+					<div id="page-wrapper">
+						<ui:insert name="corpo">
+						</ui:insert>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		
+	<ui:include src="/WEB-INF/template/footer.xhtml" />
+	</h:body>
 	
-	<f:loadBundle basename="messages.webapp" var="msgs" />
-
-	<f:view contentType="text/html">
-
-		<div id="todo">
-
-			<div id="topo">
-				<ui:include src="/WEB-INF/templates/header.xhtml" />
-			</div>
-
-			<div id="conteudo">
-				<ui:insert name="contents" />
-				<div class="push" />
-				<h:form>
-					<p:remoteCommand name="atualizarFormulario" update="precatorioForm" />
-				</h:form>
-			</div>
-
-		</div>
-
-		<div id="rodape">
-			<ui:include src="/WEB-INF/templates/footer.xhtml" />
-		</div>
-
-		<ui:insert name="popup" />
-
-	</f:view>
-
-</h:body>
 </html>

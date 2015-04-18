@@ -1,17 +1,27 @@
 @CHARSET "ISO-8859-1";
 
 .formularioCorpo{
-	  background-color: #FFF;
-	  border-bottom: 1px solid #e5e5e5;
-	  border-top: 1px solid #e5e5e5;
-	  border-right: 1px solid #e5e5e5;
-	  border-left: 1px solid #e5e5e5;
-	  width: 66%;
-	  height: 873px;
-	  margin: 50px auto 10px auto;	
+	background-color: #FFF;
+	border-bottom: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
+	border-right: 1px solid #e5e5e5;
+	border-left: 1px solid #e5e5e5;
+	width: 66%;
+	height: 873px;
+	margin: 50px auto 10px auto;	
 		
 }
 
 .form-group{
 	
+}
+
+.titulo-corpo{	
+	margin-top: 45px;
+	margin-right: auto;
+	font-size: large;
+	font-family: sans-serif;
+	text-align: center;
+	color: darkblue;
+	font-style: italic;		
 }
