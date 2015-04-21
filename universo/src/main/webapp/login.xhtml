@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/main.xhtml">
+
+	<ui:define name="corpo">
+		<div class="titulo-corpo">
+			<p:outputLabel> FAÇA O SEU LOGIN
+			</p:outputLabel>
+		</div>
+		<h:form>
+		<p:messages showDetail="true" autoUpdate="true" closable="true"  id="msg"/>
+			<div class="grid-login">
+				<p:panelGrid columns="2">
+					<p:column>
+						<p:outputLabel value="LOGIN: " for="inputlogin"/>
+					</p:column>
+					<p:column>
+						<p:inputText id="inputlogin" value="#{UsuarioBean.usuario.login}" required="true"/>
+						<p:message for="inputlogin"/>
+					</p:column>
+					<p:column>
+						<p:outputLabel value="SENHA: " for="inputsenha"/>
+					</p:column>
+					<p:column>
+						<p:inputText type="password" id="inputsenha" required="true" value="#{UsuarioBean.usuario.senha}"/>
+						<p:message for="inputsenha"/>
+					</p:column>
+				</p:panelGrid>
+			</div>
+				<p:commandButton value="ENTRAR" style="margin-left: 251px;" update="msg" actionListener="#{UsuarioBean.logar}" />
+		</h:form>
+	</ui:define>
+
+
+</ui:composition>
